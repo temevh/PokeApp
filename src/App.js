@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <Pokemon/>
+      <Pokemon pokeName={"pikachu"}/>
     </div>
   );
 }

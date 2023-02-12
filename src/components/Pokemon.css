@@ -1,0 +1,12 @@
+p{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#infodiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
