@@ -8,7 +8,7 @@ const Pokemon = ({pokeName}) => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
       .then((response) => response.json())
       .then((data) => setPokemon(data));
-  }, []);
+  }, [pokeName]);
 
   return (
     <div id="infodiv">
