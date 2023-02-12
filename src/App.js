@@ -8,13 +8,15 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(pokeName)
-    // Call the Pokemon component with the updated pokeName
+    console.log(pokeName);
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className='App'>
+      <header>
+        <h1>POKEAPP</h1>
+      </header>
+      <form onSubmit={handleSubmit} id="searchForm">
         <label htmlFor="pokemon-input">Enter Pokemon name:</label>
         <input
           id="pokemon-input"
@@ -22,7 +24,6 @@ function App() {
           value={pokeName}
           onChange={(event) => setPokeName(event.target.value)}
         />
-        <button type="submit">Get Pokemon Info</button>
       </form>
       <Pokemon pokeName={pokeName} />
     </div>
