@@ -1,19 +1,27 @@
 import './App.css';
+import React from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
-  var apiRes = "a"
+  const [pokemons, setPokemons] = useState([])
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?limit=100"
+      );
+      const data = await response.json();
+      setPokemons(data.results);
+    };
+    fetchData();
+  }, []);
 
   return (
-    <div className="App">
-      <header>
-      <h1>PokeApp</h1>  
-      </header>   
-      <body>
-        <h2>Api result {apiRes}</h2>
-
-      </body>
-    </div>
+    <ul>
+    {pokemons.map(({ name, url }) => (
+      <li key={url}>{name}</li>
+    ))}
+  </ul>
   );
 }
 
