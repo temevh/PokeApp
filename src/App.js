@@ -17,14 +17,17 @@ function App() {
         <h1>POKEAPP</h1>
       </header>
       <form onSubmit={handleSubmit} id="searchForm">
-        <label htmlFor="pokemon-input">Enter Pokemon name:</label>
-        <input
-          id="pokemon-input"
-          type="text"
-          value={pokeName}
-          onChange={(event) => setPokeName(event.target.value)}
-        />
+        <label htmlFor="pokemon-input"></label>
+        <div className="input-group">
+          <input
+            id="pokemon-input"
+            type="text"
+            value={pokeName}
+            onChange={(event) => setPokeName(event.target.value)}
+          />
+        </div>
       </form>
+      <img src="./components/Search.svg" />
       <Pokemon pokeName={pokeName} />
     </div>
   );
