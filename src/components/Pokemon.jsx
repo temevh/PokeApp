@@ -12,14 +12,23 @@ const Pokemon = ({pokeName}) => {
 
   return (
     <div id="infodiv">
-      <p>
-        Name: {pokemon.name} <br />
-        Weight: {pokemon.weight} <br />
-        Height: {pokemon.height} <br />
-        Abilities:{" "}
-        {pokemon.abilities &&
-          pokemon.abilities.map((ability) => ability.ability.name).join(", ")}
-      </p>
+      <div id="namediv">
+          <p>Name: {pokemon.name}</p>
+      </div>
+      <div id="weightdiv">
+          <p>Weight: {pokemon.weight}</p>
+      </div>
+      <div id="heightdiv">
+          <p>Height: {pokemon.height}</p>
+      </div>
+      <div id="abilitiesdiv">
+          <p>
+          Abilities:{" "}
+          {pokemon.abilities &&
+          pokemon.abilities.map((ability) => ability.ability.name).join("\n")}
+          </p>
+      </div>
+
     </div>
   );
 };

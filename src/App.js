@@ -27,7 +27,6 @@ function App() {
           />
         </div>
       </form>
-      <img src="./components/Search.svg" />
       <Pokemon pokeName={pokeName} />
     </div>
   );
