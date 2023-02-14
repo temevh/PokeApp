@@ -5,7 +5,7 @@ const Pokemon = ({pokeName}) => {
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/pikachu/`)
       .then((response) => response.json())
       .then((data) => setPokemon(data));
   }, [pokeName]);
@@ -16,10 +16,10 @@ const Pokemon = ({pokeName}) => {
           <p>Name: {pokemon.name}</p>
       </div>
       <div id="weightdiv">
-          <p>Weight: {pokemon.weight}</p>
+          <p>HP: {pokemon.height}</p>
       </div>
       <div id="heightdiv">
-          <p>Height: {pokemon.height}</p>
+          <p>Attack: {pokemon.height}</p>
       </div>
       <div id="abilitiesdiv">
           <p>
