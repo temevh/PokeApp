@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Pokemon from './components/Pokemon';
 
 function App() {
-  const [pokeName, setPokeName] = useState("ditto");
+  const [pokeName, setPokeName] = useState("pikachu");
 
   const handleSubmit = (event) => {
     event.preventDefault();
