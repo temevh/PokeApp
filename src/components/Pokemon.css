@@ -1,3 +1,7 @@
+body{
+    background-color: grey;
+}
+
 p{
     font-size: 40px;
     font-weight: bold;
@@ -5,12 +9,22 @@ p{
 }
 
 #infodiv{
-    position: absolute;
     margin-top: 3vw;
     margin-left: 38vw;
+    background-color: white;
+    border: 10px solid red;
+    height: 50vh;
+    width: 50vw;
+    border-radius: 20px;
+    display: flex;
+    gap: 4vw;
+    margin-left: 25vw;
 }
 
 
+#statdiv{
+    margin-left: 20px;
+}
 
 #namediv{
     background-color: red;
@@ -36,4 +50,5 @@ p{
 img{
     height: 400px;
     width: 400px;
+    padding-right: 20px;
 }

@@ -3,7 +3,6 @@ import "./Pokemon.css"
 
 const Pokemon = ({pokeName}) => {
   const [pokemon, setPokemon] = useState({});
-  const [pokeImg, setPokeImg] = useState({})
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
@@ -18,24 +17,25 @@ const Pokemon = ({pokeName}) => {
 
   return (
     <div id="infodiv">
-      <div id="namediv">
-          <p>Name: {pokemon.name}</p>
+      <div id="statdiv">
+        <div id="namediv">
+            <p>Name: {pokemon.name}</p>
+        </div>
+        <div id="hpdiv">
+            <p>HP: {hpStat && hpStat.base_stat}</p>
+        </div>
+        <div id="attackdiv">
+            <p>Attack: {attackStat && attackStat.base_stat}</p>
+        </div>
+        <div id="abilitiesdiv">
+            <p>
+            Abilities:{" "}
+            {pokemon.abilities &&
+            pokemon.abilities.map((ability) => ability.ability.name).join(", ")}
+            </p>
+        </div>
       </div>
-      <div id="hpdiv">
-          <p>HP: {hpStat && hpStat.base_stat}</p>
-      </div>
-      <div id="attackdiv">
-          <p>Attack: {attackStat && attackStat.base_stat}</p>
-      </div>
-      <div id="abilitiesdiv">
-          <p>
-          Abilities:{" "}
-          {pokemon.abilities &&
-          pokemon.abilities.map((ability) => ability.ability.name).join("\n")}
-          </p>
-      </div>
-    
-      <img src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${idString}.png`}/>
+      <img src={`https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/${idString}.png`} alt={`${pokemon.name}`}/>
     </div>
   );
 };
