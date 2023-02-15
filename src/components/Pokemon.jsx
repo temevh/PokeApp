@@ -10,16 +10,19 @@ const Pokemon = ({pokeName}) => {
       .then((data) => setPokemon(data));
   }, [pokeName]);
 
+  const hpStat = pokemon.stats && pokemon.stats.find((stat) => stat.stat.name === "hp");
+  const attackStat = pokemon.stats && pokemon.stats.find((stat) => stat.stat.name === "attack")
+
   return (
     <div id="infodiv">
       <div id="namediv">
           <p>Name: {pokemon.name}</p>
       </div>
-      <div id="weightdiv">
-          <p>HP: {pokemon.height}</p>
+      <div id="hpdiv">
+          <p>HP: {hpStat && hpStat.base_stat}</p>
       </div>
-      <div id="heightdiv">
-          <p>Attack: {pokemon.height}</p>
+      <div id="attackdiv">
+          <p>Attack: {attackStat && attackStat.base_stat}</p>
       </div>
       <div id="abilitiesdiv">
           <p>
