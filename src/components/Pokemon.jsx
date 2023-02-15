@@ -3,14 +3,14 @@ import "./Pokemon.css"
 
 const Pokemon = ({pokeName}) => {
   const [pokemon, setPokemon] = useState({});
-  const [pokeType, setPokeType] = useState("");
+  const [pokeTypes, setPokeType] = useState([]);
   
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
       .then((response) => response.json())
       .then((data) => {
         setPokemon(data);
-        setPokeType(data.types[0].type.name);
+        setPokeType(data.types.map((type) => type.type.name));
       });
   }, [pokeName]);
   
@@ -25,7 +25,7 @@ const Pokemon = ({pokeName}) => {
             <p>Name: {pokemon.name}</p>
         </div>
         <div id="typediv">
-            <p>Type: {pokeType}</p>
+          <p>Type(s): {pokeTypes.join(", ")}</p>
         </div>
         <div id="hpdiv">
             <p>HP: {hpStat && hpStat.base_stat}</p>
