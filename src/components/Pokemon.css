@@ -1,10 +1,39 @@
 p{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
 #infodiv{
     position: absolute;
     margin-top: 3vw;
     margin-left: 38vw;
+}
+
+
+
+#namediv{
+    background-color: red;
+    border-radius: 8px;
+    position: relative;
+}
+
+#hpdiv{
+    background-color: green;
+    border-radius: 8px;
+}
+
+#attackdiv{
+    background-color: blue;
+    border-radius: 8px;
+}
+
+#abilitiesdiv{
+    background-color: blueviolet;
+    border-radius: 8px;
+}
+
+img{
+    height: 400px;
+    width: 400px;
 }
